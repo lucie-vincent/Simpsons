@@ -1,0 +1,145 @@
+#wrapper { 
+    /* on utilise pas "body" pour faire des modifs sur l'ensemble de la page 
+    (facilite pour ajouter des pages par la suite)
+    ==> on crée une div #"wrapper" qui comprend tout le body sur lequel on va faire les modifs
+    */
+    margin: auto;
+    padding: 0 15%;
+    background-color: yellow;
+    /* 
+    on colore tout le corps de la page en jaune (on peut pas colorer le padding uniquement)
+    ensuite on va colorer par dessus en blanc le main : résultat = padding en jaune, main en blanc
+    */
+}
+
+* {   
+    /* sélecteur universel */
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    vertical-align: top;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* ============================================================== */
+/* ==========================HEADER============================== */
+/* ============================================================== */
+
+/* header img{ = sélecteur de descendant ; remplace création d'une id pour l'image) */
+header img {
+    width: 100%;
+}
+
+
+
+/* ============================================================== */
+/* ==========================MAIN================================ */
+/* ============================================================== */
+
+main{
+    display: flex;
+    /* 
+    display: flex à utiliser sur le contenant. les enfants directs recoivent les caractéristiques.
+    justify content (axe principal) + align-items (axe secondaire) = utiliser display flex avant
+    */
+    align-items: flex-start;
+    gap: 10px; /* permet ajouter espace entre tous les éléments du contenant */
+    text-align: justify;    
+    background-color: white;
+    padding-top: 30px;
+    padding-bottom: 40px;
+}
+
+nav {
+    margin-left: 15px;
+    padding: 25px;
+    flex-basis: 20%; 
+    /* flex-basis à utiliser sur les 3 éléments (nav, article, aside)en partageant le 100% */
+}
+
+li{
+    margin-top: 8px;
+}
+
+article{
+    flex-basis: 55%;
+}
+
+aside {
+    margin-right: 15px;
+    padding: 25px;
+    flex-basis: 25%;
+}
+
+h1 {
+    color: rgb(238, 241, 6);
+    margin-bottom: 20px;
+    margin-top: 15px;
+}
+aside img { /*  sélecteur de descendant */
+    width: 150px;
+    float: center;
+    border: 2px solid white;
+}
+
+h2, nav, ul, li, a, aside {
+    background-color: rgb(66, 144, 247);
+    color: white;
+    text-align: center;
+    list-style-type: none;  /* enlève les bullets dans la liste */
+}
+
+
+h2 {
+    padding: 10px;
+}
+
+p {
+    text-align: justify;
+    margin-top: 15px;
+}
+
+
+/* ============================================================== */
+/* ==========================FOOTER============================== */
+/* ============================================================== */
+
+footer {
+    background-color: blue;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+@media screen and (max-width: 700px) {
+    #wrapper {
+        padding: 0;
+    }
+    
+    main {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    nav {
+        width: 100%;
+        margin-left: 0;
+        padding: 10px;
+    }
+
+    article {
+        padding: 10px;
+    }
+
+    aside {
+        margin-right: 0;
+    }
+
+    h1 {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+}
+
+/* https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
